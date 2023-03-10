@@ -1,4 +1,15 @@
-const connectToMongo=require('./db.js');
+// const connectToMongo=require('./db.js');
+const mongoose= require('mongoose');
+const mongoURI="mongodb+srv://scragonrex:anand@cluster0.ox9zych.mongodb.net/?retryWrites=true&w=majority";
+
+const connectToMongo=()=>
+{
+    mongoose.connect(mongoURI,()=>
+    {
+        console.log("Connected to MongoDb");
+    })
+}
+
 connectToMongo();
 
 var cors = require('cors')
