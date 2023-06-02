@@ -61,6 +61,7 @@ router.post('/login', [
    body('email', 'Enter a valid email').isLength({ min: 3 }),
    body('password', 'Password cannot be blank').exists()],
    async (req, res) => {
+      console.log("login request recieved");
       let success = false;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
